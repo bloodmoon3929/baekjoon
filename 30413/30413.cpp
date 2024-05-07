@@ -13,7 +13,11 @@ int main() {
     A=(power(N,M)-1)%MOD;
     B=(power(N-1, MOD-2))%MOD;
 
-    cout << (A*B)%MOD << endl;
+
+    if(N==1)
+        cout<<(N*M)%MOD;
+    else
+        cout<< (A*B)%MOD << endl;
 
 
 
@@ -27,9 +31,9 @@ long long power(long long base, long long exp) {
     {
         if (exp % 2 == 1) 
         {
-            result = (result%MOD * base%MOD) % MOD;
+            result = (result * base) % MOD;
         }
-        base = (base%MOD * base%MOD) % MOD;
+        base = (base * base) % MOD;
         exp /= 2;
     }
     return result;
